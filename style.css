@@ -1,0 +1,102 @@
+:root {
+  --header-background-color: #06060c;
+  --header-logo: #44c6ab;
+  --header-text: #9098aa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  background-color: black;
+}
+
+/* Header */
+
+header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  background-color: var(--header-background-color);
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  align-items: center;
+  border-bottom: 1px solid #114e42;
+}
+.logo {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.2rem;
+  cursor: pointer;
+}
+.logo span {
+  color: var(--header-logo);
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+.primary-button {
+  background-color: #45c881;
+  padding: 1rem 2rem;
+  margin: 1px;
+  border-radius: 2rem;
+  color: #000000;
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  transition: transform 0.3s ease;
+}
+.primary-button:hover {
+  transform: translateY(-0.3rem) scale(1.1);
+  box-shadow: 10 10px 25px -5px #45c881;
+}
+header ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style-type: none;
+}
+header ul a {
+  color: var(--header-text);
+  font-size: 0.9rem;
+  position: relative;
+}
+header:hover {
+  border-color: #1a7c69;
+}
+header ul a::after {
+  content: "";
+  left: 50%;
+  bottom: -5px;
+  height: 3px;
+  width: 0;
+  position: absolute;
+  background-color: #1a7c69;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+header ul a::before {
+  content: "";
+  left: 50%;
+  top: -5px;
+  height: 3px;
+  width: 0;
+  position: absolute;
+  background-color: #1578c9;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+header ul a:hover::after,
+header ul a:hover::before {
+  width: 100%;
+}
+header li {
+  transition: transform 0.3s ease;
+}
+header li:hover {
+  transform: scale(1.1);
+}
