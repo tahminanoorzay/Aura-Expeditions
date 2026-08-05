@@ -181,6 +181,12 @@ header a:hover {
   grid-template-columns: 1fr 1fr;
   padding: 4rem 2rem;
   margin-bottom: 3rem;
+  background-color: var(lin);
+  background: radial-gradient(
+    circle at top right,
+    var(--border-glow) 0%,
+    var(--header-background-color) 30%
+  );
 }
 .hero-left-texts {
   padding-right: 5rem;
