@@ -2,7 +2,6 @@
   /* Accent Colors */
   --body-background-color: #05070c;
   --card-background-color: #1219268c;
-  --header-background-color: #06060c;
   --navbar-background-color: #05070cb3;
   --emerald-color: #10b981;
   --cyan-color: #06b6d4;
@@ -75,7 +74,7 @@ body {
 header {
   display: grid;
   grid-template-columns: auto 1fr auto;
-  background-color: var(--header-background-color);
+  background-color: var(--navbar-background-color);
   padding: 1rem 2rem;
   text-transform: uppercase;
   font-weight: bold;
@@ -84,9 +83,6 @@ header {
   position: sticky;
   top: 0;
   z-index: 99;
-}
-nav {
-  background-color: var(--navbar-background-color);
 }
 .logo {
   font-size: 1.7rem;
@@ -185,7 +181,7 @@ header a:hover {
   background: radial-gradient(
     circle at top right,
     var(--border-glow) 0%,
-    var(--header-background-color) 30%
+    var(--body-background-color) 30%
   );
 }
 .hero-left-texts {
