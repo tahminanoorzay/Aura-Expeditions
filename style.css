@@ -42,7 +42,7 @@
 
 /* Animitions */
 /* Hero img info Animition */
-@keyframes heroImgInfoAnimition {
+@keyframes heroImgInfoAnimation {
   0% {
     transform: translateY(0px);
   }
@@ -109,7 +109,7 @@ a {
   border-radius: 2rem;
   color: #000000;
   font-size: 0.9rem;
-  font-weight: bold;
+  font-weight: 900;
   letter-spacing: 0.05rem;
   display: inline-block;
   box-shadow: 0 2px 3px 1px var(--emerald-color);
@@ -117,7 +117,7 @@ a {
   border: none;
 }
 .primary-button:hover {
-  transform: translateY(-0.3rem) scale(1.1);
+  transform: translateY(-0.3rem) scale(1.03);
   box-shadow: 0 1px 30px 2px var(--emerald-color);
   color: #000000;
 }
@@ -132,8 +132,11 @@ header ul a {
   font-size: 0.9rem;
   position: relative;
 }
+header {
+  transition: border-color 0.4s ease;
+}
 header:hover {
-  border-color: var(--emerald-color);
+  border-color: var(--glow-color);
 }
 header ul a::after {
   content: "";
@@ -175,7 +178,7 @@ header a:hover {
 
 .hero {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr 1fr;
   padding: 4rem 2rem;
   margin-bottom: 3rem;
 }
@@ -196,12 +199,12 @@ header a:hover {
     box-shadow 0.5s ease,
     border 0.5s ease;
 }
-.hero-top-button:hover {
+.top-buttons:hover {
   border: 2px solid #076b4a;
-  box-shadow: 0 100px 100px 2px var(--emerald-color);
+  box-shadow: 1px 1px 20px 1px var(--glow-color);
 }
 .hero h1 {
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 700;
   color: var(--main-text);
   line-height: 1.2;
@@ -225,20 +228,21 @@ a.hero-link::after {
   content: "➜";
   margin-left: 0.5rem;
 }
-.hero-right-image {
-  justify-content: right;
-}
 .hero-img {
   position: relative;
   width: 90%;
   justify-self: right;
   overflow: hidden;
   border: 1px solid transparent;
-  transition: transform 1s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 .hero-img img {
   width: 100%;
+  height: 300px;
   border-radius: 1.5rem;
+  object-fit: cover;
 }
 .hero-img::after {
   content: "";
@@ -293,7 +297,7 @@ a.hero-link::after {
   color: var(--muted-text);
   background-color: var(--card-background-color);
   transition: border 0.3s ease;
-  animation: heroImgInfoAnimition 10s infinite ease-in-out;
+  animation: heroImgInfoAnimation 10s infinite ease-in-out;
 }
 .hero-img-info .info1 {
   animation-delay: 1s;
@@ -329,7 +333,7 @@ a.hero-link::after {
   gap: 2.5rem;
   text-align: left;
 }
-.destinations-container .card img {
+.destinations-container img {
   width: 100%;
   height: 250px;
   object-fit: cover;
@@ -344,35 +348,35 @@ a.hero-link::after {
     transform 0.3s ease,
     border 0.3s ease;
 }
-.destinations-container .card .card-texts {
+.destinations-container .card-texts {
   padding: 2rem;
   color: var(--main-text);
 }
-.destinations-container .card .firstP {
+.destinations-container .firstP {
   color: var(--gold-color);
   font-size: 0.8rem;
   font-weight: bold;
   letter-spacing: 0.2rem;
   margin-bottom: 0.3rem;
 }
-.destinations-container .card .card-texts h3 {
+.destinations-container .card-texts h3 {
   font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
-.destinations-container .card .card-texts .otherPs {
+.destinations-container .otherPs {
   color: var(--muted-text);
   font-size: 1rem;
   line-height: 1.5;
   margin-bottom: 2.5rem;
 }
-.destinations-container .card .cost {
+.destinations-container .cost {
   display: flex;
   justify-content: space-between;
   border-top: 1px solid #3e444d;
   padding-top: 1.5rem;
 }
-.destinations-container .card .cost .cost-number {
+.destinations-container .cost-number {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -380,7 +384,7 @@ a.hero-link::after {
   font-weight: 700;
   color: var(--emerald-color);
 }
-.destinations-container .card .cost .cost-number span {
+.destinations-container .cost-number span {
   font-size: 0.9rem;
   font-weight: 700;
   color: var(--muted-text);
@@ -424,6 +428,7 @@ a.hero-link::after {
   gap: 2rem;
   grid-template-columns: 2fr 0.7fr 1.3fr;
   grid-template-rows: 20rem 20rem;
+  margin-top: 2rem;
 }
 .gallery .imgs-container img {
   width: 100%;
@@ -450,21 +455,21 @@ a.hero-link::after {
   grid-column: 3 / 4;
   grid-row: 2 / 3;
 }
-.gallery .imgs-container .img-card {
+.gallery .img-card {
   position: relative;
   border-radius: 20px;
   overflow: hidden;
   border: 1px solid transparent;
   transition: transform 0.3s ease;
 }
-.gallery .imgs-container .img-card::after {
+.gallery .img-card::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, transparent 0%, #141414 100%);
+  background: var(--gallery-img-overlay);
   z-index: 1;
 }
-.gallery .imgs-container .img-card .img-card-texts {
+.gallery .img-card-texts {
   position: absolute;
   text-align: left;
   bottom: 1rem;
@@ -472,25 +477,25 @@ a.hero-link::after {
   z-index: 2;
   transition: transform 0.3s ease;
 }
-.gallery .imgs-container .img-card .img-card-texts h3 {
+.gallery .img-card-texts h3 {
   color: var(--main-text);
   font-size: 1.2rem;
 }
-.gallery .imgs-container .img-card .img-card-texts .firstH3 {
+.gallery .firstH3 {
   font-size: 2rem;
 }
-.gallery .imgs-container .img-card .img-card-texts p {
+.gallery .img-card-texts p {
   color: var(--muted-text);
 }
-.gallery .imgs-container .img-card:hover {
+.gallery .img-card:hover {
   border: 1px solid var(--emerald-color);
   transform: scale(1.02);
-  box-shadow: var(--card-hover);
+  box-shadow: var(--gallery-img-shadow);
 }
-.gallery .imgs-container .img-card:hover .img-card-texts {
+.gallery .img-card:hover .img-card-texts {
   transform: translateY(-0.3rem);
 }
-.gallery .imgs-container .img-card:hover img {
+.gallery .img-card:hover img {
   transform: scale(1.1);
 }
 
@@ -530,10 +535,10 @@ a.hero-link::after {
   border: 1px solid transparent;
   transition: transform 0.3s ease;
 }
-.architecture-container .architecture-card h4 {
+.architecture-container h4 {
   color: var(--cyan-color);
 }
-.architecture-container .architecture-card p {
+.architecture-container p {
   font-size: 0.9rem;
 }
 .architecture-container .architecture-card:hover {
@@ -553,30 +558,30 @@ a.hero-link::after {
   border-top: 1px solid var(--card-hover);
   border-bottom: 1px solid var(--card-hover);
 }
-.stats-bar-container h1 {
+.stats-bar-container h2 {
   font-size: 3rem;
   font-weight: 800;
   color: var(--emerald-color);
 }
-.stats-bar-container .stats-lable {
+.stats-bar-container .stats-label {
   padding: 2rem;
+  margin: 0 1.2rem;
   transition: transform 0.3s ease;
 }
 
-.stats-bar-container .stats-lable:hover {
+.stats-bar-container .stats-label:hover {
   background-color: var(--stats-card-hover);
   border-radius: 1rem;
-
   transform: translateY(-3px);
 }
 
-/* Sanctuaries */
-.sanctuaries {
+/* testimonials */
+.testimonials {
   margin-top: 6rem;
   padding: 1rem 2rem;
   text-align: center;
 }
-.sanctuaries .sanctuaries-container {
+.testimonials .testimonials-container {
   color: var(--muted-text);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -584,41 +589,41 @@ a.hero-link::after {
   gap: 2rem;
   padding-top: 3rem;
 }
-.sanctuaries .sanctuaries-container .sanctuaries-card {
+.testimonials .testimonials-card {
   background-color: var(--card-background-color);
   padding: 2rem;
   border-radius: 1rem;
   border: 1px solid transparent;
   transition: transform 0.3s ease;
 }
-.sanctuaries .sanctuaries-container .sanctuaries-card::before {
+.testimonials .testimonials-card::before {
   content: "★★★★★";
   color: var(--gold-color);
   font-size: 1.8rem;
 }
-.sanctuaries .sanctuaries-container .sanctuaries-card img {
+.testimonials .testimonials-card img {
   border-radius: 50%;
   object-fit: cover;
   height: 70px;
   width: 70px;
   margin-right: 0.5rem;
 }
-.sanctuaries .sanctuaries-container .sanctuaries-card .sanctuaries-card-p {
+.testimonials .testimonials-card-p {
   margin-top: 2rem;
 }
-.sanctuaries .sanctuaries-container .sanctuaries-card .sanctuaries-bottom {
+.testimonials .testimonials-bottom {
   margin-top: 2rem;
   display: flex;
   align-items: center;
   text-align: left;
 }
-.sanctuaries .sanctuaries-container .sanctuaries-card .sanctuaries-bottom h3 {
+.testimonials h3 {
   color: var(--main-text);
 }
-.sanctuaries .sanctuaries-container .sanctuaries-card .sanctuaries-bottom p {
+.testimonials .testimonials-bottom p {
   font-size: 0.8rem;
 }
-.sanctuaries .sanctuaries-container .sanctuaries-card:hover {
+.testimonials .testimonials-card:hover {
   border: 1px solid var(--gold-color);
   transform: translateY(-3px);
   box-shadow: var(--card-hover);
@@ -645,7 +650,7 @@ a.hero-link::after {
 .form-section {
   flex: 1;
 }
-.impact .impact-container .form-section form {
+.impact .form-section form {
   display: grid;
   align-items: center;
   gap: 2rem;
@@ -663,9 +668,8 @@ a.hero-link::after {
 .selection {
   grid-column: 1/3;
 }
-.impact .impact-container .form-section form button {
+.impact .form-section form button {
   grid-column: 1/3;
-  font-weight: 1000;
 }
 .form-section input,
 .form-section select {
@@ -675,10 +679,10 @@ a.hero-link::after {
   border: none;
   background-color: var(--body-background-color);
 }
-.impact .impact-container .form-section select {
+.impact select {
   color: var(--main-text);
 }
-.impact .impact-container .left-section .mainH1 {
+.impact .left-section .mainH1 {
   font-size: 2.5rem;
 }
 .form-section input:focus,
@@ -698,32 +702,32 @@ a.hero-link::after {
   display: grid;
   grid-template-columns: 1fr 2fr;
 }
-.contact .right-footer {
+.contact .right-contact {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 3rem;
   line-height: 2rem;
   justify-self: center;
 }
-.contact .left-footer .logo {
+.contact .left-contact .logo {
   text-transform: uppercase;
 }
-.contact .left-footer p {
+.contact .left-contact p {
   line-height: 1.8rem;
   padding-top: 2rem;
   font-size: 1.1rem;
 }
-.contact .right-footer ul {
+.contact .right-contact ul {
   list-style-type: none;
 }
-.contact .right-footer li:nth-child(1) {
+.contact .right-contact li:nth-child(1) {
   font-weight: bold;
   color: var(--main-text);
 }
-.contact .right-footer li:not(:first-child) {
+.contact .right-contact li:not(:first-child) {
   transition: transform 0.2s ease;
 }
-.contact .right-footer li:not(:first-child):hover {
+.contact .right-contact li:not(:first-child):hover {
   transform: translateX(3px);
   color: var(--emerald-color);
   cursor: pointer;
