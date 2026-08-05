@@ -240,6 +240,7 @@ a.hero-link::after {
   justify-self: right;
   overflow: hidden;
   border: 1px solid transparent;
+  border-radius: 1.5rem;
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -260,7 +261,6 @@ a.hero-link::after {
 .hero-img:hover {
   box-shadow: var(--header-card-shadow);
   border: 1px solid var(--emerald-color);
-  border-radius: 1.5rem;
   transform: translateY(-0.3rem) scale(1.02);
 }
 .hero-img span {
