@@ -105,7 +105,9 @@ a {
   font-weight: bold;
   letter-spacing: 0.05rem;
   display: inline-block;
+  box-shadow: 0 2px 3px 1px var(--emerald-color);
   transition: transform 0.3s ease;
+  border: none;
 }
 .primary-button:hover {
   transform: translateY(-0.3rem) scale(1.1);
@@ -615,4 +617,65 @@ a.hero-link::after {
   box-shadow: var(--card-hover);
 }
 
-/* Sanctuaries */
+/* Impact */
+
+.impact {
+  margin: 4rem 2rem;
+  padding: 1rem 2rem;
+  text-align: left;
+  border-radius: 1rem;
+  background-color: #0b77534d;
+  border: 1px solid var(--emerald-color);
+}
+.impact .impact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem 0;
+}
+.left-section,
+.form-section {
+  flex: 1;
+}
+.impact .impact-container .form-section form {
+  display: grid;
+  align-items: center;
+  gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+}
+.name {
+  grid-column: 1/2;
+}
+.last {
+  grid-column: 2/2;
+}
+.email {
+  grid-column: 1/3;
+}
+.selection {
+  grid-column: 1/3;
+}
+.impact .impact-container .form-section form button {
+  grid-column: 1/3;
+  font-weight: 1000;
+}
+.form-section input,
+.form-section select {
+  color: var(--main-text);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: var(--body-background-color);
+}
+.impact .impact-container .form-section select {
+  color: var(--main-text);
+}
+.impact .impact-container .left-section .mainH1 {
+  font-size: 2.5rem;
+}
+.form-section input:focus,
+.form-section select:focus {
+  outline: 1px solid var(--emerald-color);
+  box-shadow: 2px 2px 5px 1px #0d7754;
+}
