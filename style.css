@@ -21,7 +21,11 @@
   --border-glow: #10b9814d;
 
   /* Gradients */
-  --form-background-color: linear-gradient(135deg, #10b9811a, #06b6d40d);
+  --form-background-color: linear-gradient(
+    135deg,
+    #10b9811a 0%,
+    #06b6d40d 100%
+  );
   --gallery-img-overlay: linear-gradient(
     to top,
     #05070cf2 0%,
@@ -77,6 +81,9 @@ header {
   font-weight: bold;
   align-items: center;
   border-bottom: 1px solid var(--border-glow);
+  position: sticky;
+  top: 0;
+  z-index: 99;
 }
 nav {
   background-color: var(--navbar-background-color);
@@ -623,8 +630,8 @@ a.hero-link::after {
   margin: 4rem 2rem;
   padding: 1rem 2rem;
   text-align: left;
-  border-radius: 1rem;
-  background-color: #0b77534d;
+  border-radius: 1.5rem;
+  background: var(--form-background-color);
   border: 1px solid var(--emerald-color);
 }
 .impact .impact-container {
@@ -678,4 +685,65 @@ a.hero-link::after {
 .form-section select:focus {
   outline: 1px solid var(--emerald-color);
   box-shadow: 2px 2px 5px 1px #0d7754;
+}
+
+/* Contact */
+.contact {
+  padding: 5rem 2rem;
+  text-align: left;
+  color: var(--muted-text);
+  background-color: #000000;
+}
+.contact .contact-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+.contact .right-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 3rem;
+  line-height: 2rem;
+  justify-self: center;
+}
+.contact .left-footer .logo {
+  text-transform: uppercase;
+}
+.contact .left-footer p {
+  line-height: 1.8rem;
+  padding-top: 2rem;
+  font-size: 1.1rem;
+}
+.contact .right-footer ul {
+  list-style-type: none;
+}
+.contact .right-footer li:nth-child(1) {
+  font-weight: bold;
+  color: var(--main-text);
+}
+.contact .right-footer li:not(:first-child) {
+  transition: transform 0.2s ease;
+}
+.contact .right-footer li:not(:first-child):hover {
+  transform: translateX(3px);
+  color: var(--emerald-color);
+  cursor: pointer;
+}
+
+/* Footer */
+
+footer {
+  background-color: #000000;
+  text-align: center;
+  color: #b1b0b0;
+  padding: 2rem 2rem 0.5rem 2rem;
+  position: relative;
+}
+footer::after {
+  content: "";
+  background-color: #222020;
+  top: 0;
+  left: 2rem;
+  right: 2rem;
+  height: 0.8px;
+  position: absolute;
 }
